@@ -1,0 +1,87 @@
+treechildren::-moz-tree-row(even)
+{
+  background-color: #F5EFFB;
+}
+treechildren::-moz-tree-cell-text(container)
+{
+  font-weight: bold;
+}
+treechildren::-moz-tree-row(hover) 
+{
+  background-color: #FDFCDC;
+}
+treechildren::-moz-tree-cell-text(hover)
+{
+  color: red;
+}
+
+treechildren::-moz-tree-row(selected) 
+{
+  background-color: #B0E0E6;
+}
+treechildren::-moz-tree-column(testcol)
+{
+  background-color: #FBEFF5;
+}
+treechildren::-moz-tree-cell-text(selected) 
+{
+  color: red;
+}
+treechildren::-moz-tree-line
+{
+  visibility: visible;
+  border: 1px dotted;
+}
+treechildren::-moz-tree-twisty
+{
+}
+
+treechildren::-moz-tree-image(container,primary,closed) 
+{
+  list-style-image: url("chrome://xultree/content/icons/folder-item.png");
+  -moz-image-region: rect(0px, 32px, 16px, 16px);
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+treechildren::-moz-tree-image(container,primary,open) 
+{
+  list-style-image: url("chrome://xultree/content/icons/folder-item.png");
+  -moz-image-region: rect(16px, 32px, 32px, 16px);
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+treechildren::-moz-tree-image(container,primary,empty) 
+{
+  list-style-image: url("chrome://xultree/content/icons/folder-item.png");
+  -moz-image-region: rect(32px, 32px, 48px, 16px);
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+treechildren::-moz-tree-image(leaf,primary) 
+{
+  list-style-image: url("chrome://xultree/content/icons/folder-item.png");
+  -moz-image-region: rect(0px,16px,16px,0px);
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+treechildren::-moz-tree-image(link) 
+{
+  list-style-image: url("chrome://xultree/content/icons/find.png");
+  -moz-image-region: rect(0px,16px,16px,0px); /* not !important */
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+treechildren::-moz-tree-image(nolink) 
+{
+  list-style-image: url("chrome://xultree/content/icons/folder-item.png");
+  -moz-image-region: rect(16px,16px,32px,0px); /* not !important */
+  width: 16px;
+  height: 16px;
+  margin: 0px 2px;
+}
+

@@ -1,0 +1,4 @@
+content xultree file:content/xultree.xul
+content venkman jar:venkman.jar!/content/venkman/
+locale venkman en-US jar:venkman.jar!/locale/en-US/venkman/
+skin   venkman modern/1.0 jar:venkman.jar!/skin/modern/venkman/

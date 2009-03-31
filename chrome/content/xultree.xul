@@ -1,0 +1,98 @@
+<?xml version="1.0"?>
+<!--
+ /*====================================================================
+ *  Author: Tony Cox (avc@sanger.ac.uk)
+ *  Copyright (c) 2006: Genome Research Ltd.
+ * This is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ * or see the on-line version at http://www.gnu.org/copyleft/gpl.txt
+ *====================================================================
+ * This file is part of the Xulnpg package and was written by
+ * 	Tony Cox (Sanger Institute, UK) avc@sanger.ac.uk
+ *
+ * Description: Provides interface for monitoring data in the Sanger
+ * Illumina production pipeline
+ *              
+ * Exported functions: None
+ * HISTORY:
+ *====================================================================
+ */ 
+-->
+
+ <!-- Stylesheet processing directives here -->
+
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="xultree.css" type="text/css"?>
+
+ <!-- Overlays imported here -->
+
+
+<window xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+    title="XulTree:Test Data Tracker"
+    width="600"
+    height="900"
+    onload="init()">
+
+
+  <!-- Main layout XML here -->
+	<hbox>
+		<label value="JSON URL: "/>
+		<textbox id="jsonurl" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/search.json?query=3000" flex="1"/>
+		<button label="Fetch" onclick="requestJsonUrl();"/>
+		<button label="Debug" onclick="start_venkman();" hidden="true"/>
+		<button label="Expand All" onclick="expandTree();"/>
+		<button label="Collapse All" onclick="collapseTree();"/>
+	</hbox>
+
+    <vbox flex="1">
+		<tree id="testtree" flex="1" treelines="true" seltype="single" onclick="updateFields(event);">  
+			<treecols>  
+   				<treecol id="type" label="Type" primary="true" flex="1"/>  
+					<splitter class="tree-splitter"/> 
+   				<treecol id="value" label="Value" flex="1"/>  
+					<splitter class="tree-splitter"/> 
+   				<treecol id="item" label="ID"  hidden="true" flex="1"/>  
+   			</treecols>  
+   			<treechildren/>  
+		</tree>  
+    </vbox>
+            
+
+    <!-- remote scripts here -->
+
+    <script src="treedata.js" type="application/x-javascript"/>
+    <script src="debug.js" type="application/x-javascript"/>
+    <script src="network.js" type="application/x-javascript"/>
+    <script src="request.js" type="application/x-javascript"/>
+    <script src="utils.js" type="application/x-javascript"/>
+	<script src="chrome://venkman/content/venkman-overlay.js"/>
+		
+    <!-- inline script here -->
+
+
+    <script type="text/javascript">
+    <![CDATA[
+
+    const DEBUG = true;
+   
+    function init()
+    {	        
+		consoleDump("Console debug started...");
+    }
+
+    ]]>
+    </script>
+
+</window>
