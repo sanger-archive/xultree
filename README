@@ -1,0 +1,39 @@
+/*-------------------------------------------------------------------
+ *  Author: Tony Cox (avc@sanger.ac.uk)
+ *  Copyright (c) 2009: Genome Research Ltd.
+ * Xulnpg is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU General Public License
+ * as published by the Free Software Foundation; either version 2
+ * of the License, or (at your option) any later version.
+ * 
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with this program; if not, write to the Free Software
+ * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
+ * or see the on-line version at http://www.gnu.org/copyleft/gpl.txt
+ *-------------------------------------------------------------------
+ * This file is part of the Xul package and was written by
+ * 	Tony Cox (Sanger Institute, UK) avc@sanger.ac.uk
+ *
+ *-------------------------------------------------------------------
+ */
+
+
+Xultree is a Mozilla XUL application for browsing JSON data retrieved from a
+URL. 
+
+It is useful for debugging web services that expose JSON data or for
+exploring JSON data structures that need to be consumed as part of web or other
+software interface.
+
+It is also my first implementation of the mozilla nsITreeView for hierarchical
+tree displays. Be kind ;-)
+
+All comments, suggestions etc to avc@sanger.ac.uk
+
+Tony Cox
+
