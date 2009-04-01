@@ -33,6 +33,19 @@ software interface.
 It is also my first implementation of the mozilla nsITreeView for hierarchical
 tree displays. Be kind ;-)
 
+
+Run is on windows/linux using Firefox:
+
+/path/to/firefox3 -app ./application.ini
+
+to turn on a debug console:
+
+/path/to/firefox3 -app ./application.ini [-console -jsconsole]
+
+or you can use the xulrunner package
+
+/path/to/xulrunner ./application.ini
+
 All comments, suggestions etc to avc@sanger.ac.uk
 
 Tony Cox

@@ -47,27 +47,70 @@
 
 
   <!-- Main layout XML here -->
-	<hbox>
-		<label value="JSON URL: "/>
-		<textbox id="jsonurl" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/search.json?query=3000" flex="1"/>
-		<button label="Fetch" onclick="requestJsonUrl();"/>
-		<button label="Debug" onclick="start_venkman();" hidden="true"/>
-		<button label="Expand All" onclick="expandTree();"/>
-		<button label="Collapse All" onclick="collapseTree();"/>
-	</hbox>
+    <tabbox id="maintabbox" flex="1">
+        <tabs id="tablist">
+            <tab id="treetab" label=" JSON Data "/>
+            <tab id="linktab" label=" Link Configuration "/>
+        </tabs>
+        <tabpanels id="tabpanellist" flex="1">
+            <tabpanel id="treepanel">
+				<vbox flex="1">
+				<hbox>
+					<label value="JSON URL: "/>
+					<textbox id="jsonurl" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/search.json?query=3000" flex="1"/>
+					<button label="Fetch" onclick="requestJsonUrl();"/>
+					<button label="Debug" onclick="start_venkman();" hidden="true"/>
+				</hbox>
 
-    <vbox flex="1">
-		<tree id="testtree" flex="1" treelines="true" seltype="single" onclick="updateFields(event);">  
-			<treecols>  
-   				<treecol id="type" label="Type" primary="true" flex="1"/>  
-					<splitter class="tree-splitter"/> 
-   				<treecol id="value" label="Value" flex="1"/>  
-					<splitter class="tree-splitter"/> 
-   				<treecol id="item" label="ID"  hidden="true" flex="1"/>  
-   			</treecols>  
-   			<treechildren/>  
-		</tree>  
-    </vbox>
+    			<vbox flex="1">
+					<tree id="testtree" flex="1" treelines="true" seltype="single" onclick="updateFields(event);">  
+						<treecols>  
+   							<treecol id="type" label="Type" primary="true" flex="1"/>  
+								<splitter class="tree-splitter"/> 
+   							<treecol id="value" label="Value" flex="1"/>  
+								<splitter class="tree-splitter"/> 
+   							<treecol id="item" label="ID"  hidden="true" flex="1"/>  
+   						</treecols>  
+   						<treechildren/>  
+					</tree>  
+    			</vbox>
+				<hbox>
+					<button label="Expand All" onclick="expandTree();"/>
+					<button label="Collapse All" onclick="collapseTree();"/>
+				</hbox>
+				</vbox>
+            </tabpanel>
+            <tabpanel id="linkpanel">
+				<vbox flex="1">
+				<description value="Add additional rows here to define custom data URLs for JSON data keys"/>
+				<hbox>
+				<button label="Add New Link" onclick="addLink();"/>
+				</hbox>
+				<grid flex="1">
+					<columns>
+						<column width="150"/>
+						<column flex="3"/>
+					</columns>
+					<rows>
+						<row>
+							<label value="Key"/>
+							<label value="URL"/>
+						</row>
+						<row>
+							<textbox id="batch_id" value="batch_id"/>
+							<textbox flex="1" value="http://psd-production.internal.sanger.ac.uk:6700/batches/VALUE.json"/>
+						</row>
+						<row>
+							<textbox id="id_run" value="id_run"/>
+							<textbox flex="1" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/run/VALUE.json"/>
+						</row>
+					</rows>
+				</grid>
+				</vbox>
+            </tabpanel>
+        </tabpanels>
+    </tabbox>
+
             
 
     <!-- remote scripts here -->
