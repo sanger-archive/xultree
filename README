@@ -34,13 +34,13 @@ It is also my first implementation of the mozilla nsITreeView for hierarchical
 tree displays. Be kind ;-)
 
 
-Run is on windows/linux using Firefox:
+Run it on Windows/linux using Firefox:
 
 /path/to/firefox3 -app ./application.ini
 
-to turn on a debug console:
+to turn on a debugging console:
 
-/path/to/firefox3 -app ./application.ini [-console -jsconsole]
+/path/to/firefox3 -app ./application.ini -jsconsole
 
 or you can use the xulrunner package
 
