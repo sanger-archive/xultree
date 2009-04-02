@@ -27,12 +27,6 @@
  */
  
 
-var linkValues = {
-	"batch_id": "http://psd-production.internal.sanger.ac.uk:6700/batches/VALUE.json",
-	"id_run": "http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/run/VALUE.json"
-};
-
-
 function treeItem () {	
 	this.id = 0;
 	this.isVisible = false;
@@ -395,7 +389,7 @@ nsTreeView.prototype = {
 			if(this._level == 0){
 				ti.isVisible = true;
 			}
-			if(linkValues[key]){
+			if(getLink(key)){
 				ti.datavalueLinkable = true;
 			}
 			this._treeData.push(ti);

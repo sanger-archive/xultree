@@ -105,9 +105,9 @@
 		var cellIndex = 2; // ID
 		var id = tree.view.getCellText(tree.currentIndex, tree.columns.getColumnAt(cellIndex));
 
-		if(linkValues[cellType]){
-			var url = linkValues[cellType];
-			url = url.replace("VALUE",cellValue);
+		if(getLink(cellType)){
+			var url = getLink(cellType);
+			url = url.replace("$$",cellValue);
 			var obj =jsonRequest(url);
 			getJsonNode(id,obj);
 			var json = document.getElementById("testtree").treeBoxObject.view.wrappedJSObject._json;
@@ -165,7 +165,7 @@
 				s = s + field;
 			}
 		}
-		consoleDump(s);
+		//consoleDump(s);
 		eval(s + "=obj");
 	}
 
