@@ -105,6 +105,14 @@
 							<textbox id="id_run" value="id_run"/>
 							<textbox flex="1" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/run/$$.json"/>
 						</row>
+						<row>
+							<textbox id="id_run_pair" value="id_run_pair"/>
+							<textbox flex="1" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/run/$$.json"/>
+						</row>
+						<row>
+							<textbox id="id_instrument" value="id_instrument"/>
+							<textbox flex="1" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/instrument/$$.json"/>
+						</row>
 					</rows>
 				</grid>
 				</vbox>
