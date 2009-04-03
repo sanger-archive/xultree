@@ -28,6 +28,39 @@
  
 	/**
 	 * Purpose:
+	 *   What are we running on?
+	 */	
+	function getAppInfo ()
+	{
+		var appInfo = Components.classes["@mozilla.org/xre/app-info;1"].getService(Components.interfaces.nsIXULAppInfo);
+		var tmp = {};
+		tmp.vendor 		= appInfo.vendor;
+		tmp.name 		= appInfo.name;
+		tmp.id 			= appInfo.ID;
+		tmp.version 	= appInfo.version;
+		tmp.build 		= appInfo.appBuildID;
+		tmp.platformVersion = appInfo.platformVersion;
+		tmp.platformBuild = appInfo.platformBuild;
+	}
+		
+	/**
+	 * Purpose:
+	 *   Clean or forced application exit
+	 */	
+	function xulExit (aForceQuit)
+	{
+	  var appStartup = Components.classes['@mozilla.org/toolkit/app-startup;1'].getService(Components.interfaces.nsIAppStartup);
+	
+	  // eAttemptQuit will try to close each XUL window, but the XUL window can cancel the quit
+	  // process if there is unsaved data. eForceQuit will quit no matter what.
+	  var quitSeverity = aForceQuit ? Components.interfaces.nsIAppStartup.eForceQuit :
+	                                  Components.interfaces.nsIAppStartup.eAttemptQuit;
+	  appStartup.quit(quitSeverity);
+	}
+
+
+	/**
+	 * Purpose:
 	 *   Utility hex->dec/dec->hex conversion routines
 	 */	
 	function d2h(d) {return d.toString(16);}
