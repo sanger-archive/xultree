@@ -53,8 +53,10 @@
 		}
 		var mode = "GET";
     	http.open(mode,url,false);  	// Synchronous request
-    	http.setRequestHeader("X-Requested-With","XMLHttpRequest");
+    	//http.setRequestHeader("X-Requested-With","XMLHttpRequest");
     	http.send(null);         			// Blocking until response arrives
+		
+		//consoleDump("HTTP response: " + http.responseText);
 		try{
 			var obj = jsonToObject(http.responseText);
 			return(obj);
@@ -82,7 +84,7 @@
 			consoleDump("HTTP async request: " + url);
 		}
 		http.setRequestHeader("Accept","text/plain");
-    	http.setRequestHeader("X-Requested-With","XMLHttpRequest");
+    	//http.setRequestHeader("X-Requested-With","XMLHttpRequest");
 		if (ssoToken != undefined){
 			http.setRequestHeader("Set-Cookie",ssoToken);			// SSO authentication cookie
 		}

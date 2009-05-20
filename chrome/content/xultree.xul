@@ -57,8 +57,9 @@
 				<vbox flex="1">
 				<hbox>
 					<label value="JSON URL: "/>
-					<textbox id="jsonurl" value="http://intweb.sanger.ac.uk/perl/prodsoft/npg/npg/search.json?query=3000" flex="1"/>
+					<textbox id="jsonurl" value="http://psd-production.internal.sanger.ac.uk:6600/projects.json" flex="1"/>
 					<button label="Fetch" onclick="requestJsonUrl();"/>
+					<button label="Clear" onclick="clearUrlTextbox();"/>
 					<button label="Debug" onclick="start_venkman();" hidden="true"/>
 				</hbox>
 
